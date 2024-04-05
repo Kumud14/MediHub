@@ -1,9 +1,7 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-
-
-
+import { errorHandler } from "./src/utilis/ApiError.js"
 
 const app = express();
 
@@ -22,5 +20,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
+// import routes
+import userRouter from "./src/routes/user.routes.js";
 
+
+
+
+// routes declaration
+app.use("/api/v1/user", userRouter);
+
+
+
+// error middleware 
+app.use(errorHandler);
 export default app;
