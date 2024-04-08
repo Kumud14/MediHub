@@ -1,6 +1,27 @@
 import asyncHandler from "../utilis/asyncHandler.js";
 import { ApiError } from "../utilis/ApiError.js"
 import jwt from "jsonwebtoken";
+import { User } from "../models/user.model.js"
+
+
+
+// Middleware to authenticate dashboard users
+export const isAdminAuthenticated = asyncHandler(
+    async (req, res, next) => {
+        const token = req.cookies.adminToken;
+
+        if (!token) {
+            throw new ApiError(401, "Unauthorized Access!");
+        }
+        const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+        req.user = await User.findById(decoded.id);
+        if (req.user.role !== "Admin") {
+            throw new ApiError(403, `${req.user.role} not authorized for this resource!`)
+        }
+        next();
+    }
+);
+
 
 // Middleware to verify JWT token for patient role
 export const isPatientAuthenticated = asyncHandler(async (req, res, next) => {
@@ -9,37 +30,20 @@ export const isPatientAuthenticated = asyncHandler(async (req, res, next) => {
 
     // Verify token
     if (!token) {
-        throw new ApiError(401, "Unauthorized - No token provided");
+        throw new ApiError(401, "Unauthorized Access!");
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
-    if (decoded.role !== "Patient") {
-        throw new ApiError(403, `${decoded.role} is not authorized for this resources`);
+    req.user = await User.findById(decoded.id);
+    if (req.user.role !== "Patient") {
+        throw new ApiError(403, `${req.user.role} not authorized for this resource!`)
     }
-    req.user = decoded;
     next();
 });
 
-// Middleware to verify JWT token for admin role
-export const isAdminAuthenticated = asyncHandler(async (req, res, next) => {
-    // Get token from request cookies
-    const token = req.cookies.adminToken;
-
-    // Verify token
-    if (!token) {
-        throw new ApiError(401, "Unauthorized - No token provided");
-    }
-
-    const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
-    if (decoded.role !== "Admin") {
-        throw new ApiError(403, `${decoded.role} is not authorized for this resources`);
-    }
-    req.user = decoded;
-    next();
-});
 
 // Middleware to verify JWT token for doctor role
-export const isdoctorAuthenticated = asyncHandler(async (req, res, next) => {
+export const isDoctorAuthenticated = asyncHandler(async (req, res, next) => {
     // Get token from request cookies
     const token = req.cookies.doctorToken;
 
@@ -49,9 +53,9 @@ export const isdoctorAuthenticated = asyncHandler(async (req, res, next) => {
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
-    if (decoded.role !== "Doctor") {
-        throw new ApiError(403, `${decoded.role} is not authorized for this resources`);
+    req.user = await User.findById(decoded.id);
+    if (req.user.role !== "Doctor") {
+        throw new ApiError(403, `${req.user.role} not authorized for this resource!`)
     }
-    req.user = decoded;
     next();
 });

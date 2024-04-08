@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 import validator from "validator";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
@@ -40,7 +40,7 @@ const userSchema = new mongoose.Schema(
         },
         nic: {
             type: String,
-            required: [true, "NIC Is Required!"],
+            // required: [true, "NIC Is Required!"],
             minLength: [13, "NIC Must Contain Only 13 Digits!"],
             maxLength: [13, "NIC Must Contain Only 13 Digits!"],
         },
@@ -82,14 +82,8 @@ userSchema.methods.comparePassword = async function (password) {
     return await bcrypt.compare(password, this.password)
 }
 
-// userSchema.methods.generateJsonWebToken = function () {
-//     return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
-//         expiresIn: process.env.JWT_EXPIRES,
-//     });
-// };
-
 userSchema.methods.generateJsonWebToken = function () {
-    jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
+    return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
         expiresIn: process.env.JWT_EXPIRES,
     });
 };
