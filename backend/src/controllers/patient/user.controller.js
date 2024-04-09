@@ -8,10 +8,10 @@ import { generateToken } from "../../utilis/jwtToken.js";
 //! Register the user
 export const patientRegister = asyncHandler(async (req, res, next) => {
     // taking the info from the user
-    const { firstName, lastName, email, phone, nic, dob, gender, password } = req.body;
+    const { firstName, lastName, email, phone, address, dob, gender, password } = req.body;
 
     // checking the info provided by the user
-    if (!firstName || !lastName || !email || !phone || !nic || !dob || !gender || !password) {
+    if (!firstName || !lastName || !email || !phone || !address || !dob || !gender || !password) {
         throw new ApiError(400, "Please Fill Full Form!");
     }
 
@@ -27,7 +27,7 @@ export const patientRegister = asyncHandler(async (req, res, next) => {
         lastName,
         email,
         phone,
-        nic,
+        address,
         dob,
         gender,
         password,

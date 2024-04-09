@@ -1,6 +1,7 @@
 import asyncHandler from "../../utilis/asyncHandler.js";
 import { ApiError } from "../../utilis/ApiError.js";
 import { User } from "../../models/user.model.js";
+import { Doctor } from "../../models/doctor.model.js"
 import { generateToken } from "../../utilis/jwtToken.js";
 
 
@@ -19,19 +20,27 @@ export const login = asyncHandler(async (req, res, next) => {
     }
 
     // ! checking the user provide correct details for login
-    // find the user in database via email
-    const user = await User.findOne({ email }).select("+password");
-    if (!user) {
-        throw new ApiError(400, "Invalid Email or Password");
-    }
-    // checking the given password and password in database matches or not
-    const isPasswordMatched = await user.comparePassword(password)
-    if (!isPasswordMatched) {
-        throw new ApiError(400, "Invalid Email or Password");
+    // find the user in database via email 
+    let user;
+    if (role === "Patient" || role === "Admin") {
+        // Find user in user collection
+        user = await User.findOne({ email }).select("+password");
+    } else if (role === "Doctor") {
+        // Find doctor in doctor collection
+        user = await Doctor.findOne({ email }).select("+password");
+    } else {
+        throw new ApiError(400, "User with this role not found");
     }
 
-    if (role !== user.role) {
-        throw new ApiError(400, "User with this role not found");
+    // Check if user or doctor exists
+    if (!user) {
+        throw new ApiError(400, "Invalid email or password");
+    }
+
+    // Check if password matches
+    const isPasswordMatched = await user.comparePassword(password);
+    if (!isPasswordMatched) {
+        throw new ApiError("Invalid email or password", 400);
     }
     generateToken(user, "User Logged In Successfully", 200, res)
 })

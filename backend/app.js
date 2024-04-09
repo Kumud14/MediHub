@@ -20,8 +20,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
+
 // import routes
 import userRouter from "./src/routes/user.routes.js";
+import fileUpload from "express-fileupload";
 
 
 

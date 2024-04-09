@@ -7,10 +7,10 @@ import { generateToken } from "../../utilis/jwtToken.js";
 //! Adding a new admin
 export const addNewAdmin = asyncHandler(async (req, res, next) => {
     // taking the info from the admin
-    const { firstName, lastName, email, phone, dob, gender, password } = req.body;
+    const { firstName, lastName, email, phone, address, dob, gender, password } = req.body;
 
     // checking the info provided by the admin
-    if (!firstName || !lastName || !email || !phone || !dob || !gender || !password) {
+    if (!firstName || !lastName || !email || !phone || !address || !dob || !gender || !password) {
         throw new ApiError(400, "Please Fill Full Form!");
     }
 
@@ -26,6 +26,7 @@ export const addNewAdmin = asyncHandler(async (req, res, next) => {
         lastName,
         email,
         phone,
+        address,
         dob,
         gender,
         password,

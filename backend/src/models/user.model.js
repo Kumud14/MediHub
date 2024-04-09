@@ -31,18 +31,23 @@ const userSchema = new mongoose.Schema(
             required: [true, "Phone is required"],
             minLength: [10, "Phone Number must contains exactly 10 digits"],
             maxLength: [10, "Phone Number must contains exactly 10 digits"],
+
+        },
+        address: {
+            city: {
+                type: String,
+                // required: true
+            },
+            country: {
+                type: String,
+                // required: true
+            }
         },
         password: {
             type: String,
             required: true,
             minLength: [8, "Password must contain at least 8 characters"],
             select: false,
-        },
-        nic: {
-            type: String,
-            // required: [true, "NIC Is Required!"],
-            minLength: [13, "NIC Must Contain Only 13 Digits!"],
-            maxLength: [13, "NIC Must Contain Only 13 Digits!"],
         },
         dob: {
             type: Date,
@@ -58,13 +63,6 @@ const userSchema = new mongoose.Schema(
             required: true,
             enum: ["Admin", "Patient", "Doctor"]
         },
-        doctorDepartment: {
-            type: String,
-        },
-        avatar: {
-            type: String, // cloudinary url
-            // required: true,
-        }
     },
     { timestamps: true }
 );

@@ -1,7 +1,8 @@
 import asyncHandler from "../utilis/asyncHandler.js";
 import { ApiError } from "../utilis/ApiError.js"
 import jwt from "jsonwebtoken";
-import { User } from "../models/user.model.js"
+import { User } from "../models/user.model.js";
+import { Doctor } from "../models/doctor.model.js"
 
 
 
@@ -53,7 +54,7 @@ export const isDoctorAuthenticated = asyncHandler(async (req, res, next) => {
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
-    req.user = await User.findById(decoded.id);
+    req.user = await Doctor.findById(decoded.id);
     if (req.user.role !== "Doctor") {
         throw new ApiError(403, `${req.user.role} not authorized for this resource!`)
     }

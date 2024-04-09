@@ -1,36 +1,55 @@
 import asyncHandler from "../../utilis/asyncHandler.js";
 import { ApiError } from "../../utilis/ApiError.js";
-import { User } from "../../models/user.model.js";
+import { Doctor } from "../../models/doctor.model.js";
 import { generateToken } from "../../utilis/jwtToken.js";
 import { ApiResponse } from "../../utilis/ApiResponse.js";
+import { uploadOnCloudinary } from "../../utilis/cloudinary.js"
 
 
 //! Adding a new doctor by admin only
 export const addNewDoctor = asyncHandler(async (req, res, next) => {
     // taking the info from the admin
-    const { firstName, lastName, email, phone, dob, gender, password } = req.body;
+    const { firstName, lastName, email, phone, password, address, gender, department, specializations, qualifications, experience, availability } = req.body;
 
     // checking the info provided by the admin
-    if (!firstName || !lastName || !email || !phone || !dob || !gender || !password) {
+    if (!firstName || !lastName || !email || !phone || !password || !address || !gender || !department || !specializations || !qualifications || !experience || !availability) {
         throw new ApiError(400, "Please Fill Full Form!");
     }
 
     // check if the admin already exists
-    let existedDoctor = await User.findOne({ email });
+    let existedDoctor = await Doctor.findOne({ email });
     if (existedDoctor) {
         throw new ApiError(400, `${existedDoctor.role} with this Email already Registered`);
     }
 
+    // docAvatar
+    const docAvatarLocalPath = req.file?.path;
+
+    if (!docAvatarLocalPath) {
+        throw new ApiError(400, "Doctor Avatar Path Not Found!");
+    }
+
+    const avatar = await uploadOnCloudinary(docAvatarLocalPath);
+    if (!avatar) {
+        throw new ApiError(400, "Doctor Avatar is required")
+    }
+
     // finally create the user
-    const createdDoctor = await User.create({
+    const createdDoctor = await Doctor.create({
         firstName,
         lastName,
         email,
         phone,
-        dob,
-        gender,
         password,
+        address,
+        gender,
+        department,
+        specializations,
+        qualifications,
+        experience,
+        availability,
         role: "Doctor",
+        docAvatar: avatar.url,
     });
     generateToken(createdDoctor, "Dcotor Added Successfully!", 200, res);
 });
@@ -38,7 +57,7 @@ export const addNewDoctor = asyncHandler(async (req, res, next) => {
 
 //! Getting all doctors by user
 export const getAllDoctors = asyncHandler(async (req, res, next) => {
-    const doctors = await User.find({ role: "Doctor" });
+    const doctors = await Doctor.find({ role: "Doctor" });
 
     res
         .status(200)
