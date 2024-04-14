@@ -1,8 +1,8 @@
 import express from "express";
-import { patientRegister, getUserDetails } from "../controllers/patient/user.controller.js";
-import { login, logoutAdmin, logoutDoctor, logoutPatient } from "../controllers/login_logout.controller.js/login_logout.controller.js";
-import { addNewAdmin } from "../controllers/admin/admin.controller.js";
-import { addNewDoctor, getAllDoctors } from "../controllers/doctor/doctor.controller.js";
+import { patientRegister, getUserDetails } from "../controllers/user.controller.js";
+import { login, logoutAdmin, logoutDoctor, logoutPatient } from "../controllers/login_logout.controller.js";
+import { addNewAdmin } from "../controllers/admin.controller.js";
+import { addNewDoctor, getAllDoctors } from "../controllers/doctor.controller.js";
 import { isAdminAuthenticated, isPatientAuthenticated, isDoctorAuthenticated } from "../middlewares/auth.middleware.js"
 import { upload } from "../middlewares/multer.middleware.js"
 

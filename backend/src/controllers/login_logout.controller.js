@@ -1,8 +1,8 @@
-import asyncHandler from "../../utilis/asyncHandler.js";
-import { ApiError } from "../../utilis/ApiError.js";
-import { User } from "../../models/user.model.js";
-import { Doctor } from "../../models/doctor.model.js"
-import { generateToken } from "../../utilis/jwtToken.js";
+import asyncHandler from "../utilis/asyncHandler.js";
+import { ApiError } from "../utilis/ApiError.js";
+import { User } from "../models/user.model.js";
+import { Doctor } from "../models/doctor.model.js"
+import { generateToken } from "../utilis/jwtToken.js";
 
 
 //! Login the user

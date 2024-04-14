@@ -1,9 +1,9 @@
-import asyncHandler from "../../utilis/asyncHandler.js";
-import { ApiError } from "../../utilis/ApiError.js";
-import { Doctor } from "../../models/doctor.model.js";
-import { generateToken } from "../../utilis/jwtToken.js";
-import { ApiResponse } from "../../utilis/ApiResponse.js";
-import { uploadOnCloudinary } from "../../utilis/cloudinary.js"
+import asyncHandler from "../utilis/asyncHandler.js";
+import { ApiError } from "../utilis/ApiError.js";
+import { Doctor } from "../models/doctor.model.js";
+import { generateToken } from "../utilis/jwtToken.js";
+import { ApiResponse } from "../utilis/ApiResponse.js";
+import { uploadOnCloudinary } from "../utilis/cloudinary.js"
 
 
 //! Adding a new doctor by admin only

@@ -23,13 +23,14 @@ app.use(express.urlencoded({ extended: true }));
 
 // import routes
 import userRouter from "./src/routes/user.routes.js";
-import fileUpload from "express-fileupload";
+import contactUsRouter from "./src/routes/contactus.routes.js";
 
 
 
 
 // routes declaration
 app.use("/api/v1/user", userRouter);
+app.use("/api/v1/message", contactUsRouter);
 
 
 
