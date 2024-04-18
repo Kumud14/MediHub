@@ -1,5 +1,5 @@
 import express from "express";
-import { patientRegister, getUserDetails } from "../controllers/user.controller.js";
+import { patientRegister, getUserDetails, getDoctorDetails } from "../controllers/user.controller.js";
 import { login, logoutAdmin, logoutDoctor, logoutPatient } from "../controllers/login_logout.controller.js";
 import { addNewAdmin } from "../controllers/admin.controller.js";
 import { addNewDoctor, getAllDoctors } from "../controllers/doctor.controller.js";
@@ -16,7 +16,7 @@ router.post("/doctor/addnew", isAdminAuthenticated, upload.single("docAvatar"), 
 router.get("/doctors", getAllDoctors);
 router.get("/admin/me", isAdminAuthenticated, getUserDetails);
 router.get("/patient/me", isPatientAuthenticated, getUserDetails);
-router.get("/doctor/me", isDoctorAuthenticated, getUserDetails);
+router.get("/doctor/me", isDoctorAuthenticated, getDoctorDetails);
 router.get("/admin/logout", isAdminAuthenticated, logoutAdmin);
 router.get("/doctor/logout", isDoctorAuthenticated, logoutDoctor);
 router.get("/patient/logout", isPatientAuthenticated, logoutPatient);

@@ -8,6 +8,7 @@ export const sendMessage = asyncHandler(async (req, res, next) => {
     if (!firstName || !lastName || !email || !message) {
         throw new ApiError(400, "Please Fill Full Form!");
     }
+
     const createdMessage = await ContactUs.create({
         firstName,
         lastName,
@@ -23,7 +24,6 @@ export const sendMessage = asyncHandler(async (req, res, next) => {
 export const getAllMessages = asyncHandler(async (req, res, next) => {
     const messages = await ContactUs.find();
     return res.status(200).json(
-        success: true,
         new ApiResponse(200, messages)
     );
 });

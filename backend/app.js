@@ -24,6 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 // import routes
 import userRouter from "./src/routes/user.routes.js";
 import contactUsRouter from "./src/routes/contactus.routes.js";
+import appointmentRouter from "./src/routes/appointment.routes.js";
 
 
 
@@ -31,6 +32,7 @@ import contactUsRouter from "./src/routes/contactus.routes.js";
 // routes declaration
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/message", contactUsRouter);
+app.use("/api/v1/appointment", appointmentRouter);
 
 
 

@@ -9,10 +9,10 @@ import { uploadOnCloudinary } from "../utilis/cloudinary.js"
 //! Adding a new doctor by admin only
 export const addNewDoctor = asyncHandler(async (req, res, next) => {
     // taking the info from the admin
-    const { firstName, lastName, email, phone, password, address, gender, department, specializations, qualifications, experience, availability } = req.body;
+    const { firstName, lastName, email, phone, password, address, gender, department, specializations, qualifications, experience, availabelSlots, languagesKnown, appointmentCharges } = req.body;
 
     // checking the info provided by the admin
-    if (!firstName || !lastName || !email || !phone || !password || !address || !gender || !department || !specializations || !qualifications || !experience || !availability) {
+    if (!firstName || !lastName || !email || !phone || !password || !address || !gender || !department || !specializations || !qualifications || !experience || !availabelSlots || !languagesKnown || !appointmentCharges) {
         throw new ApiError(400, "Please Fill Full Form!");
     }
 
@@ -47,7 +47,9 @@ export const addNewDoctor = asyncHandler(async (req, res, next) => {
         specializations,
         qualifications,
         experience,
-        availability,
+        availabelSlots,
+        languagesKnown,
+        appointmentCharges,
         role: "Doctor",
         docAvatar: avatar.url,
     });

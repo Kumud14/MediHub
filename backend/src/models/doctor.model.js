@@ -39,14 +39,18 @@ const doctorSchema = new mongoose.Schema({
         select: false,
     },
     address: {
+        country: {
+            type: String,
+            required: true
+        },
         city: {
             type: String,
             required: true
         },
-        country: {
+        pincode: {
             type: String,
             required: true
-        }
+        },
     },
     gender: {
         type: String,
@@ -54,12 +58,24 @@ const doctorSchema = new mongoose.Schema({
         enum: ["Male", "Female"],
     },
     department: {
-        type: String,
-        required: true
+        name: {
+            type: String,
+            required: true
+        },
+        description: {
+            type: String,
+            required: true
+        }
     },
-    specializations: [{
-        type: [String], //Array of specializations 
-        required: true
+    specializations: [{   //Array of specializations
+        name: {
+            type: String,
+            required: true
+        },
+        description: {
+            type: String,
+            required: true
+        }
     }],
     qualifications: {
         type: [String], //Array of qualifications
@@ -69,7 +85,7 @@ const doctorSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    availability: {
+    availabelSlots: {
         days: {
             type: [String],
             required: true
@@ -88,6 +104,14 @@ const doctorSchema = new mongoose.Schema({
         required: true,
         enum: ["Admin", "Patient", "Doctor"]
     },
+    languagesKnown: {
+        type: [String],  //Array of languages
+        required: true
+    },
+    appointmentCharges: {
+        type: String,
+        required: true
+    }
 },
     { timestamps: true });
 

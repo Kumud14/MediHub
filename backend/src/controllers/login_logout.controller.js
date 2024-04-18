@@ -29,12 +29,13 @@ export const login = asyncHandler(async (req, res, next) => {
         // Find doctor in doctor collection
         user = await Doctor.findOne({ email }).select("+password");
     } else {
-        throw new ApiError(400, "User with this role not found");
+        throw new ApiError(400, "Invalid email or password");
     }
 
     // Check if user or doctor exists
     if (!user) {
-        throw new ApiError(400, "Invalid email or password");
+        throw new ApiError(400, `User with ${role} role not found`);
+
     }
 
     // Check if password matches
@@ -42,6 +43,7 @@ export const login = asyncHandler(async (req, res, next) => {
     if (!isPasswordMatched) {
         throw new ApiError("Invalid email or password", 400);
     }
+
     generateToken(user, "User Logged In Successfully", 200, res)
 })
 

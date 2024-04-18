@@ -40,9 +40,18 @@ export const patientRegister = asyncHandler(async (req, res, next) => {
 });
 
 
-//! Getting details for the user
+//! Getting details for the user(patiend & admin)
 export const getUserDetails = asyncHandler(async (req, res, next) => {
     const user = req.user;
+
+    res
+        .status(200)
+        .json(new ApiResponse(200, user, `${user.role} Details`));
+});
+
+//! Getting details for the doctro
+export const getDoctorDetails = asyncHandler(async (req, res, next) => {
+    const user = req.doctor;
 
     res
         .status(200)
