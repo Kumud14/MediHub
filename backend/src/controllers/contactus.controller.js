@@ -4,8 +4,8 @@ import { ApiResponse } from "../utilis/ApiResponse.js";
 import { ContactUs } from "../models/contactus.model.js";
 
 export const sendMessage = asyncHandler(async (req, res, next) => {
-    const { firstName, lastName, email, message } = req.body;
-    if (!firstName || !lastName || !email || !message) {
+    const { firstName, lastName, email, message, phone } = req.body;
+    if (!firstName || !lastName || !email || !message || !phone) {
         throw new ApiError(400, "Please Fill Full Form!");
     }
 
@@ -13,6 +13,7 @@ export const sendMessage = asyncHandler(async (req, res, next) => {
         firstName,
         lastName,
         email,
+        phone,
         message
     });
 

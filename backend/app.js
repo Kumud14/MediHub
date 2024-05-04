@@ -1,9 +1,16 @@
+import dotenv from "dotenv";
+
 import express from "express";
-import cors from "cors";
 import cookieParser from "cookie-parser";
 import { errorHandler } from "./src/utilis/ApiError.js"
+import cors from "cors";
 
 const app = express();
+
+// dotenv configuration
+dotenv.config({
+    path: './.env'
+})
 
 // cors middleware configuration connects frontend to backend
 app.use(
@@ -13,7 +20,7 @@ app.use(
         credentials: true,
     })
 );
-
+console.log(process.env.FRONTEND_URL);
 
 app.use(cookieParser());
 app.use(express.json());

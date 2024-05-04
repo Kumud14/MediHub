@@ -17,6 +17,12 @@ const contactusSchema = new mongoose.Schema({
         required: true,
         validate: [validator.isEmail, "Provide A Valid Email!"],
     },
+    phone: {
+        type: String,
+        required: true,
+        minLength: [10, "Phone Number Must Contain Exact 10 Digits!"],
+        maxLength: [10, "Phone Number Must Contain Exact 10 Digits!"],
+    },
     message: {
         type: String,
         required: true,

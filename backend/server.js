@@ -1,12 +1,7 @@
-import dotenv from "dotenv";
-import app from "./app.js";
 import dbConnection from "./src/db/dbConnection.js";
 import { v2 as cloudinary } from 'cloudinary';
+import app from "./app.js";
 
-// dotenv configuration
-dotenv.config({
-    path: './.env'
-})
 
 // cloudinary configuration
 cloudinary.config({
