@@ -8,82 +8,90 @@ import { FaTwitter } from "react-icons/fa";
 
 function Footer() {
   return (
-    <div className="border-t border-slate-300 w-full h-auto shadow-md  px-4 py-2">
-      {/* footer top */}
-      <div className="max-w-7xl mx-auto flex flex-col items-center justify-evenly px-4 py-2 sm:px-6 lg:px-8 my-4 md:flex-row">
-        {/* title */}
-        <div className="title">
-          <h1 className=" relative font-bold text-gray-500 text-lg cursor-default before:block before:absolute before:bottom-0 before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-red-500 before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-gray-900">
+    <div className=" w-full  text-center px-2 ">
+
+      <div className="bg-body  border-t border-onhover max-w-7xl mx-auto flex flex-col items-center py-2 sm:px-6 ">
+
+
+        {/* footer top */}
+        <div className=" flex flex-col items-center justify-evenly px-4 py-4 sm:px-6 lg:px-8 lg:flex-row w-full gap-y-2">
+
+          <h1 className="relative text-lg text-primary/80 font-semibold before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-onhover before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-primary">
             Quick Links
           </h1>
-        </div>
-        {/* menus */}
-        <div className="my-3">
-          <ul className="flex flex-col justify-between gap-3 items-center text-sm font-semibold text-gray-500 md:flex-row md:gap-8">
-            <li>
-              <Link
-                to={"/"}
-                className="relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-red-500 before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-gray-900"
-              >
-                Privacy Policy
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={"/"}
-                className="relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-red-500 before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-gray-900"
-              >
-                Terms & Conditions
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={"/"}
-                className="relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-red-500 before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-gray-900"
-              >
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={"/"}
-                className="relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-red-500 before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-gray-900"
-              >
-                Contact Us
-              </Link>
-            </li>
-          </ul>
+
+          {/* menus */}
+          <div className="my-3">
+            <ul className="flex flex-col justify-between gap-3 items-center text-sm font-semibold text-primary/80 md:flex-row md:gap-8">
+              <li>
+                <Link
+                  to={"/"}
+                  className="relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-onhover before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-primary"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={"/"}
+                  className="relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-onhover before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-primary"
+                >
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={"/"}
+                  className="relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-onhover before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-primaryr"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={"/"}
+                  className="relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-onhover before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-primary"
+                >
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* icons */}
+          <div className="flex items-center gap-4 ">
+            <div className=" border border-border/50 rounded-full px-2 py-2 hover:bg-onhover/10 cursor-pointer">
+              <FaInstagram />
+            </div>
+            <div className=" border border-border/50 rounded-full px-2 py-2 hover:bg-onhover/10 cursor-pointer">
+              <FaLinkedin />
+            </div>
+            <div className=" border border-border/50 rounded-full px-2 py-2 hover:bg-onhover/10 cursor-pointer">
+              <FaTwitter />
+            </div>
+          </div>
         </div>
 
-        {/* icons */}
-        <div className="flex items-center gap-4 ">
-          <div className=" border border-black/50 rounded-full px-2 py-2 hover:bg-black/10 cursor-pointer">
-            <FaInstagram />
-          </div>
-          <div className=" border border-black/50 rounded-full px-2 py-2 hover:bg-black/10 cursor-pointer">
-            <FaLinkedin />
-          </div>
-          <div className=" border border-black/50 rounded-full px-2 py-2 hover:bg-black/10 cursor-pointer">
-            <FaTwitter />
-          </div>
-        </div>
-      </div>
 
-      {/* footer bottom */}
-      <div className="border-t border-slate-300 py-2">
-        <div className=" mx-auto max-w-6xl items-center justify-between px-4 md:flex lg:px-0 ">
+
+        {/* footer bottom */}
+
+        <div className="w-full flex flex-col  items-center justify-between px-4 lg:px-0 md:flex-row py-4">
           {/* title */}
           <div className="title">
-            <h1 className="font-bold text-2xl">MediHub</h1>
+            <h1 className="text-primary font-bold text-2xl">MediHub</h1>
           </div>
 
-          <div className="mt-4 md:mt-0 ">
-            <p className="text-sm font-medium text-gray-500">
+          <div className=" mt-2 ">
+            <p className="text-sm font-medium text-secondary">
               © 2023 DevUI. All rights reserved.
             </p>
           </div>
         </div>
+
       </div>
+
+
     </div>
   );
 }

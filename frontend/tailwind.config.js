@@ -17,8 +17,13 @@ export default {
         }
       },
       colors: {
-        hero: "rgb(178, 230, 253)",
-        button:"#A6DEF7"
+        primary: "#02475b",
+        border: "#285430",
+        onhover: "#29666a",
+        secondary:"#1a4b4e",
+        body: "#f2f2f2",
+        underline: "#00b38e",
+        newColor: "#A76BC3"
       }
     },
   },

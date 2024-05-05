@@ -22,13 +22,13 @@ function Navbar() {
 
 
   return (
-    <div className={`${scrolled ? "sticky top-0 delay-500 ease animate-[stickyNavbar fill-mode-forwards] bg-slate-200" : ""} w-full h-46 px-2 py-2 shadow-md`}>
+    <div className={`${scrolled ? "sticky top-0 delay-500 ease animate-[stickyNavbar fill-mode-forwards]" : ""} w-full h-46 px-2 pb-1`}>
 
-      <div className=" max-w-7xl mx-auto flex items-center justify-between py-2 md:px-4 lg:px-6 sticky top-0  ">
+      <div className=" max-w-7xl mx-auto flex items-center justify-between py-4 md:px-4 lg:px-6 drop-shadow-md bg-body border px-2 ">
 
         {/* Title */}
         <div className="title">
-          <h1 className="font-bold text-2xl">MediHub</h1>
+          <h1 className="font-bold text-2xl text-primary">MediHub</h1>
         </div>
 
         {/* Nav Menus */}
@@ -37,43 +37,36 @@ function Navbar() {
             <li>
               <Link
                 to={"/"}
-                className="text-sm font-semibold text-gray-600 relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-red-500 before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-gray-900"
+                className="text-sm font-semibold text-primary/80 relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-onhover before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-primary"
               >
                 Home
               </Link>
             </li>
             <li>
               <Link
-                to={"/"}
-                className="text-sm font-semibold text-gray-600 relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-red-500 before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-gray-900"
+                to={"/alldoctors"}
+                className="text-sm font-semibold text-primary/80 relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-onhover before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-primary"
               >
                 All Doctors
               </Link>
             </li>
             <li>
               <Link
-                to={"/"}
-                className="text-sm font-semibold text-gray-600 relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-red-500 before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-gray-900"
+                to={"/appointment"}
+                className="text-sm font-semibold text-primary/80 relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-onhover before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-primary"
               >
                 Appointment
               </Link>
             </li>
             <li>
               <Link
-                to={"/"}
-                className="text-sm font-semibold text-gray-600 relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-red-500 before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-gray-900 md:hidden lg:block"
+                to={"/aboutus"}
+                className="text-sm font-semibold text-primary/80 relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-onhover before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-primary md:hidden lg:block"
               >
                 About Us
               </Link>
             </li>
-            <li>
-              <Link
-                to={"/"}
-                className="text-sm font-semibold text-gray-600 relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-red-500 before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-gray-900 md:hidden lg:block"
-              >
-                Contact Us
-              </Link>
-            </li>
+
           </ul>
         </div>
 
@@ -81,13 +74,14 @@ function Navbar() {
         <div className="hidden space-x-2 md:block">
           <button
             type="button"
-            className="rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-black hover:bg-black/10  hover:border border-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            className="rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-primary/80 hover:text-white hover:bg-secondary  
+            border hover:border border-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-border"
           >
             Log In
           </button>
           <button
             type="button"
-            className="rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-black/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            className="rounded-md border border-secondary px-3 py-2 text-sm font-semibold shadow-sm bg-secondary hover:bg-onhover text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-border"
           >
             Sign Up
           </button>
