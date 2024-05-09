@@ -1,7 +1,6 @@
 import { axios } from "../import-export/ImportExport.js";
 import React, { useState } from "react";
 import { toast } from 'react-toastify';
-import api from "../axios/axios.jsx";
 
 
 function GetInTouch() {
@@ -14,7 +13,7 @@ function GetInTouch() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await api
+      await axios
         .post(
           "/message/send",
           { firstName, lastName, email, phone, message },
