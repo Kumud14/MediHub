@@ -37,12 +37,12 @@ function GetInTouch() {
   }
   return (
     <div className=" w-full px-2 ">
-      <div className="py-12 max-w-7xl mx-auto flex flex-col items-center bg-body rounded-md px-2 md:px-4">
+      <div className="py-12 max-w-7xl mx-auto flex flex-col items-center px-2 md:px-4">
 
         <h1 className=" my-12 text-2xl md:text-4xl font-bold tracking-tight text-primary text-center ">
           Get In Touch With Us
         </h1>
-        <div className="flex w-full justify-between items-center">
+        <div className="md:grid grid-cols-2 gap-x-4 hidden">
           {/* contact form */}
           <form onSubmit={handleSubmit} className="w-full md:w-[500px] my-4 space-y-6 md:mx-auto lg:mx-0 lg:w-[400px] xl:w-[600px]">
             <div className="  flex flex-col w-full gap-y-4 md:gap-x-4 lg:grid-cols-2">

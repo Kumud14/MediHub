@@ -1,11 +1,11 @@
 import React from 'react'
-import { AppointmentLocation, Specialities } from '../import-export/ImportExport'
+import { AppointmentLocation, Departments } from '../import-export/ImportExport'
 
 function Appointment() {
     return (
         <>
             <AppointmentLocation />
-            <Specialities />
+            <Departments />
         </>
     )
 }

@@ -6,11 +6,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-    /* box-sizing: border-box; */
     font-family: "Montserrat", sans-serif;
 }
 
 body {
-    background-color: #F0F1EC;
-    /* background-color: #F7F8F5; */
+    height: 100%;
 }

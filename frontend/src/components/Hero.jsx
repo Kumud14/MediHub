@@ -1,37 +1,43 @@
 import React from "react";
 
-import hero from "/hero.png";
-// import appointment_icon from "/appointment_icon.svg";
-
 import { IoIosArrowForward } from "react-icons/io";
 
 function Hero() {
   return (
-    <div className="w-full  px-2">
+    <div className="relative w-full h-[100vh] bg-[url('../../public/heroone.jpg')] md:bg-left-top bg-cover bg-no-repeat  bg-center">
+      <div className="w-full h-full bg-black/20">
+        <div className="relative max-w-7xl  mx-auto flex flex-col items-center md:items-start justify-between lg:px-6 px-3 py-3 h-full">
+          <div className="absolute top-[50%] translate-y-[-50%] lg:left-[5%] flex flex-col items-center w-fit gap-6 ">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold  text-white text-center py-2 px-6 ">
+              Your Health
+              <br />
+              <span className="text-theme">Is Our</span>
+              <br />
+              <span className="text-theme">Mission</span>
+            </h1>
 
-      <div className="max-w-7xl h-[70vh] mx-auto flex flex-col-reverse md:flex-row items-center justify-around pb-6 md:pd-2 md:px-4 lg:px-6 gap-12  bg-body rounded-md drop-shadow-md px-2">
+            {/* above medium scrren size button */}
+            <button
+              className="hidden md:flex w-fit items-center rounded-full md:px-4 lg:px-5 md:py-3 lg:py-4 text-sm font-semibold  shadow-sm hover:shadow-lg   bg-theme hover:bg-onhover text-text gap-3">
+              <img
+                src="https://images.apollo247.in/images/ic-doctor.svg"
+                alt="icon"
+                className="size-8 "
+              />
+              Book Your Appointment Now
+              <IoIosArrowForward className="" />
+            </button>
 
-        <div className=" flex flex-col justify-center md:w-[450px] gap-6 items-center">
-
-          <h1 className="text-2xl md:text-3xl lg:text-3xl font-bold tracking-tight text-primary text-center ">
-
-            Always caring about your health, we are here to help you
-          </h1>
-
-          <button className="flex w-fit items-center rounded-md border border-onhover px-2 md:px-3 py-2 text-sm font-semibold  shadow-sm hover:shadow-md  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black bg-secondary hover:bg-onhover text-slate-100
-          ">
-            <img
-              src="https://images.apollo247.in/images/ic-doctor.svg"
-              alt="icon"
-              className="mr-2 md:mr-4"
-            />
-            Book Your Appointment Now <IoIosArrowForward className="ml-2" />
-          </button>
-        </div>
-
-
-        <div>
-          <img src={hero} alt="" className="w-[250px] md:w-[350px] lg:w-[450px]" />
+            {/* small screen size button */}
+            <button className="md:hidden flex w-fit items-center rounded-full px-4 py-4 text-xs font-semibold  shadow-sm hover:shadow-md bg-theme text-text ">
+              <img
+                src="https://images.apollo247.in/images/ic-doctor.svg"
+                alt="icon"
+                className="hidden mr-2 md:mr-4 size-8"
+              />
+              Book an Appointment <IoIosArrowForward className="ml-2" />
+            </button>
+          </div>
         </div>
       </div>
     </div>

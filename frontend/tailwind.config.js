@@ -20,10 +20,12 @@ export default {
         primary: "#02475b",
         border: "#285430",
         onhover: "#29666a",
-        secondary:"#1a4b4e",
+        secondary: "#1a4b4e",
         body: "#f2f2f2",
         underline: "#00b38e",
-        newColor: "#A76BC3"
+        newColor: "#A76BC3",
+        theme: "#11484e",
+        text: "#FFFFFF"
       }
     },
   },

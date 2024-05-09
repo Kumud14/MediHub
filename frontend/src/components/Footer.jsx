@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // icons
 import { FaInstagram } from "react-icons/fa";
@@ -24,36 +24,36 @@ function Footer() {
           <div className="my-3">
             <ul className="flex flex-col justify-between gap-3 items-center text-sm font-semibold text-primary/80 md:flex-row md:gap-8">
               <li>
-                <Link
+                <NavLink
                   to={"/"}
                   className="relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-onhover before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-primary"
                 >
                   Privacy Policy
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to={"/"}
                   className="relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-onhover before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-primary"
                 >
                   Terms & Conditions
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to={"/"}
                   className="relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-onhover before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-primaryr"
                 >
                   About Us
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to={"/"}
                   className="relative cursor-pointer before:block before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5 before:rounded-full before:bg-onhover before:transition-all before:delay-150 before:ease-in-out hover:before:w-full hover:text-primary"
                 >
                   Contact Us
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>

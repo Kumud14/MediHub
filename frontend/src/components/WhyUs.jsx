@@ -7,63 +7,92 @@ import { FaRegBuilding } from "react-icons/fa";
 
 function WhyUs() {
   return (
-    <div className=" w-full px-2 ">
-      <div className="py-12 max-w-7xl mx-auto flex flex-col items-center bg-body rounded-md px-2">
-        <h1 className="my-12 text-2xl md:text-4xl font-bold tracking-tight text-primary text-center">
-          Why Choose Us?
+    <div className=" w-full md:py-24 py-12">
+      <div className="max-w-7xl mx-auto flex flex-col items-center h-full lg:px-6 lg:justify-center px-3 py-3">
+        <h1 className=" text-2xl md:text-4xl lg:text-5xl font-bold text-theme text-center">
+          Why Choose Us
         </h1>
-        <div className="flex flex-col md:flex-row md:gap-2 lg:gap-4 justify-between items-center gap-2 mt-5  md:flex-wrap md:justify-around lg:justify-around lg:flex-wrap">
+        <p className="text-xs md:text-base md:max-w-2xl mt-3 text-center">
+          We understand that your health and well-being are of paramount
+          importance. Here are compelling reasons why you should choose us for
+          your healthcare needs
+        </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 md:gap-y-10 gap-y-4 mt-12 md:mt-14 lg:mt-20">
           {/* Aid card  */}
-          <div className="shadow-md my-4 w-fit rounded-md border border-secondary text-center p-4 md:p-4 md:w-[300px] flex flex-col items-center gap-4 hover:shadow-xl">
-            <BiSolidFirstAid className="size-24 text-white bg-onhover border-2 border-primary rounded-full px-4 py-4 mb-4" />
+          <div className="flex items-center shadow-md my-4 rounded-md md:px-4 hover:shadow-xl hover:border border-theme py-4">
+            <div className="flex items-start gap-x-4 py-2 ">
+              <div className="icon">
+                <BiSolidFirstAid className="size-16 text-white bg-theme rounded-full px-4 py-4" />
+              </div>
 
-            <div className="p-4 md:p-2 lg:p-0">
-              <h1 className="text-md font-semibold uppercase text-primary/80">
-                Advanced Technology
-              </h1>
-              <p className="mt-3 text-sm text-secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                corrupti saepe repellat, eligendi ipsa esse!
-              </p>
+              <div className="text">
+                <h1 className="mb-2 text-md text-left font-semibold uppercase text-theme/80">
+                  Advanced Technology
+                </h1>
+                <p className="mt-0 text-sm text-left text-theme">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Commodi repellat numquam, dolore necessitatibus excepturi
+                  velit saepe consequatur magnam, unde officiis, hic ipsam nemo
+                  praesentium nam quo.
+                </p>
+              </div>
             </div>
           </div>
           {/* Doctors card */}
-          <div className="shadow-md my-4 w-fit rounded-md border border-secondary text-center p-4 md:p-4 md:w-[300px] flex flex-col items-center gap-4 hover:shadow-xl">
-            <FaUserDoctor className="size-24 text-white bg-onhover border-2 border-primary rounded-full px-4 py-4 mb-4" />
-            <div className="p-4 md:p-2 lg:p-0">
-              <h1 className="text-md font-semibold uppercase text-primary/80">
-                Advanced Technology
-              </h1>
-              <p className="mt-3 text-sm text-secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                corrupti saepe repellat, eligendi ipsa esse!
-              </p>
+          <div className="flex items-center shadow-md my-4 rounded-md md:px-4 hover:shadow-xl hover:border border-theme py-4">
+            <div className="flex items-start gap-x-4 py-2 ">
+              <div>
+                <FaUserDoctor className="size-16 text-white bg-theme rounded-full px-4 py-4" />
+              </div>
+              <div className="text">
+                <h1 className="mb-2 text-md text-left font-semibold uppercase text-theme/80">
+                  Advanced Technology
+                </h1>
+                <p className="mt-0 text-sm text-left text-theme">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Commodi repellat numquam, dolore necessitatibus excepturi
+                  velit saepe consequatur magnam, unde officiis, hic ipsam nemo
+                  praesentium nam quo.
+                </p>
+              </div>
             </div>
           </div>
           {/* Ambulance card */}
-          <div className="shadow-md my-4 w-fit rounded-md border border-secondary text-center p-4 md:p-4 md:w-[300px] flex flex-col items-center gap-4 hover:shadow-xl">
-            <FaAmbulance className="size-24 text-white bg-onhover border-2 border-primary rounded-full px-4 py-4 mb-4" />
-            <div className="p-4 md:p-2 lg:p-0">
-              <h1 className="text-md font-semibold uppercase text-primary/80">
-                Advanced Technology
-              </h1>
-              <p className="mt-3 text-sm text-secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                corrupti saepe repellat, eligendi ipsa esse!
-              </p>
+          <div className="flex items-center shadow-md my-4 rounded-md md:px-4 hover:shadow-xl hover:border border-theme py-4">
+            <div className="flex items-start gap-x-4 py-2 ">
+              <div>
+                <FaUserDoctor className="size-16 text-white bg-theme rounded-full px-4 py-4" />
+              </div>
+              <div className="text">
+                <h1 className="mb-2 text-md text-left font-semibold uppercase text-theme/80">
+                  Advanced Technology
+                </h1>
+                <p className="mt-0 text-sm text-left text-theme">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Commodi repellat numquam, dolore necessitatibus excepturi
+                  velit saepe consequatur magnam, unde officiis, hic ipsam nemo
+                  praesentium nam quo.
+                </p>
+              </div>
             </div>
           </div>
           {/* Ambulance card */}
-          <div className="shadow-md my-4 w-fit rounded-md border border-secondary text-center p-4 md:p-4 md:w-[300px] flex flex-col items-center gap-4 hover:shadow-xl">
-            <FaRegBuilding className="size-24 text-white bg-onhover border-2 border-primary rounded-full px-4 py-4 mb-4" />
-            <div className="p-4 md:p-2 lg:p-0">
-              <h1 className="text-md font-semibold uppercase text-primary/80">
-                Advanced Technology
-              </h1>
-              <p className="mt-3 text-sm text-secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                corrupti saepe repellat, eligendi ipsa esse!
-              </p>
+          <div className="flex items-center shadow-md my-4 rounded-md md:px-4 hover:shadow-xl hover:border border-theme py-4">
+            <div className="flex items-start gap-x-4 py-2 ">
+              <div>
+                <FaUserDoctor className="size-16 text-white bg-theme rounded-full px-4 py-4" />
+              </div>
+              <div className="text">
+                <h1 className="mb-2 text-md text-left font-semibold uppercase text-theme/80">
+                  Advanced Technology
+                </h1>
+                <p className="mt-0 text-sm text-left text-theme">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Commodi repellat numquam, dolore necessitatibus excepturi
+                  velit saepe consequatur magnam, unde officiis, hic ipsam nemo
+                  praesentium nam quo.
+                </p>
+              </div>
             </div>
           </div>
         </div>
