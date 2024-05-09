@@ -4,7 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 function Hero() {
   return (
-    <div className="relative w-full h-[100vh] bg-[url('../../public/heroone.jpg')] md:bg-left-top bg-cover bg-no-repeat  bg-center">
+    <div className="relative w-full h-[100vh] bg-[url('./heroone.jpg')] md:bg-left-top bg-cover bg-no-repeat  bg-center">
       <div className="w-full h-full bg-black/20">
         <div className="relative max-w-7xl  mx-auto flex flex-col items-center md:items-start justify-between lg:px-6 px-3 py-3 h-full">
           <div className="absolute top-[50%] translate-y-[-50%] lg:left-[5%] flex flex-col items-center w-fit gap-6 ">
