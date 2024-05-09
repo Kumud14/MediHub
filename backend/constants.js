@@ -1,1 +1,1 @@
-export const DB_NAME = "MERN_STACK_HOSPITAL_MANAGEMENT_SYSTEM";
+export const DB_NAME = "MediHub";

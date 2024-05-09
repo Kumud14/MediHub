@@ -54,7 +54,9 @@ export const logoutAdmin = asyncHandler(async (req, res, next) => {
         .status(200)
         .cookie("adminToken", "", {
             expires: new Date(Date.now()),
-            httpOnly: true
+            httpOnly: true,
+            secure: true,
+            sameSite: "None"
         })
         .json({
             success: true,
@@ -69,7 +71,9 @@ export const logoutPatient = asyncHandler(async (req, res, next) => {
         .status(200)
         .cookie("patientToken", "", {
             expires: new Date(Date.now()),
-            httpOnly: true
+            httpOnly: true,
+            secure: true,
+            sameSite: "None"
         })
         .json({
             success: true,
@@ -84,7 +88,9 @@ export const logoutDoctor = asyncHandler(async (req, res, next) => {
         .status(200)
         .cookie("doctorToken", "", {
             expires: new Date(Date.now()),
-            httpOnly: true
+            httpOnly: true,
+            secure: true,
+            sameSite: "None"
         })
         .json({
             success: true,
